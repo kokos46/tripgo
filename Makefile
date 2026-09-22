@@ -1,4 +1,5 @@
-export DATABASE_URL ?= postgres://app:app@localhost:5432/cinema?sslmode=disable
+include .env
+export
 
 .PHONY: migrate-up migrate-down run lint test generate
 
@@ -18,4 +19,8 @@ lint:
 	golangci-lint run ./...
 
 generate:
-	go tool oapi-codegen -generate types,std-http -package openapi -o ./api/trip_service.gen.go ./contracts/openapi/trip-service.openapi.yaml
+	go tool oapi-codegen \
+         -generate types,chi-server \
+         -package api \
+         -o internal/generated/api.gen.go \
+         contracts/openapi/trip-service.openapi.yaml
