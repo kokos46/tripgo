@@ -12,7 +12,7 @@ test:
 	go test -race
 
 run:
-	go run ./cmd/app $(ARGS)
+	go run ./cmd/trip-service $(ARGS)
 
 lint:
 	golangci-lint run ./...
