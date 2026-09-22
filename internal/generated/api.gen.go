@@ -176,7 +176,7 @@ type CreateTripJSONRequestBody = TripData
 // CreateTripPositionJSONRequestBody defines body for CreateTripPosition for application/json ContentType.
 type CreateTripPositionJSONRequestBody = PositionData
 
-// ServerInterface represents all server handlers.
+// ServerInterface represents all server handler.
 type ServerInterface interface {
 	// CreateTrip Создать поездку
 	// (POST /api/v1/trips)
