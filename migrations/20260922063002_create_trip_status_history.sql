@@ -15,5 +15,5 @@ CREATE INDEX trip_status_history_trip_changed_idx
 
 -- +goose Down
 -- +goose StatementBegin
-SELECT 'down SQL query';
+DROP TABLE trip_status_history;
 -- +goose StatementEnd

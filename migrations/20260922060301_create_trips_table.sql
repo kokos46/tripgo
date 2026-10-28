@@ -25,9 +25,10 @@ CREATE TABLE trips (
 );
 
 CREATE INDEX trips_status_started_at_idx ON trips (status, started_at);
+CREATE UNIQUE INDEX trips_driver_active_idx ON trips (driver_id) WHERE status = 'active';
 -- +goose StatementEnd
 
 -- +goose Down
 -- +goose StatementBegin
-SELECT 'down SQL query';
+DROP TABLE trips;
 -- +goose StatementEnd
